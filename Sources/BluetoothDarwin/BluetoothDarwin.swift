@@ -28,7 +28,7 @@ internal func HCISendRequest <Command: HCICommand> (command: Command,
     guard error == 0
         else { throw BluetoothDarwinError(errorCode: error) }
     
-    assert(request != 0)
+//    assert(request != 0)
     
     error = BluetoothHCISendRawCommand(request: request, commandData: commandRawData, returnParameter: &returnParameterData)
     
