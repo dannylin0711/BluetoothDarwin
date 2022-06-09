@@ -14,6 +14,11 @@ import BluetoothHCI
 
 @objc(BluetoothHostController)
 public final class HostController: NSObject, BluetoothHostControllerInterface {
+    public func recieve<Event>(_ eventType: Event.Type) async throws -> Event where Event : HCIEventParameter, Event.HCIEventType == HCIGeneralEvent {
+        let event = Event(data: Data())
+        return event!
+    }
+    
     
     // MARK: - Properties
     
