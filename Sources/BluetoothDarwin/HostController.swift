@@ -57,7 +57,7 @@ public final class HostController: NSObject, BluetoothHostControllerInterface {
     /// - Note: Only Apple Bluetooth adapters support power off.
     public var powerState: PowerState {
         guard let powerState = PowerState(rawValue: numericCast(controller.powerState.rawValue)) else {
-            assertionFailure("Invalid power state \(controller.powerState.rawValue)")
+            //assertionFailure("Invalid power state \(controller.powerState.rawValue)")
             return .unintialized
         }
         return powerState
@@ -140,7 +140,7 @@ public final class HostController: NSObject, BluetoothHostControllerInterface {
     
     public func deviceRequest<CP, Return>(_ commandParameter: CP, _ commandReturnType: Return.Type, timeout: HCICommandTimeout = .default) throws -> Return where CP : HCICommandParameter, Return : HCICommandReturnParameter {
         
-        assert(CP.command.rawValue == Return.command.rawValue)
+        //assert(CP.command.rawValue == Return.command.rawValue)
         
         let commandParameterData = commandParameter.data
         var returnParameterData = Data(repeating: 0, count: commandReturnType.length)

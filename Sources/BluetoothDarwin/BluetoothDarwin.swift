@@ -43,8 +43,8 @@ internal func BluetoothHCISendRawCommand(request: BluetoothHCIRequestID,
                                          commandData: Data,
                                          returnParameter outputData: inout Data) -> CInt {
     
-    assert(commandData.isEmpty == false)
-    assert(request != 0)
+    //assert(commandData.isEmpty == false)
+    //assert(request != 0)
     
     var request = request
     let commandData = commandData as NSData

@@ -13,7 +13,7 @@ public struct BluetoothDarwinError: Swift.Error {
     public let errorCode: CInt
     
     internal init(errorCode: CInt) {
-        assert(errorCode != 0)
+        //assert(errorCode != 0)
         self.errorCode = errorCode
     }
 }
